@@ -1,0 +1,11 @@
+node_modules
+dist
+dist-ssr
+coverage
+*.tsbuildinfo
+*.local
+*.log
+.DS_Store
+.vscode/*
+!.vscode/extensions.json
+npm-debug.log*

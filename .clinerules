@@ -1,0 +1,36 @@
+# Graph Game — Project Rules
+
+## Tech Stack
+- React 18 + TypeScript 5 (strict mode)
+- Vite
+- SVG rendering for graph (no Canvas for MVP)
+- Vitest + Testing Library for tests
+- No backend, no database
+
+## Coding Conventions
+- NO `any` types — все типы явно объявлены
+- Functional components + hooks only (no class components)
+- File naming: kebab-case for files (`graph-generator.ts`), PascalCase for components (`GraphCanvas.tsx`)
+- Every algorithm function must have JSDoc with complexity note
+- No `console.log` in committed code
+
+## Architecture
+- `src/lib/graph/` — types, generator, algorithms (dijkstra, bfs)
+- `src/components/` — React components
+- `src/hooks/` — custom hooks
+- Tests colocated with source: `graph-generator.test.ts` next to `graph-generator.ts`
+
+## Graph Domain Rules
+- Node type: `{ id: string; x: number; y: number }`
+- Edge type: `{ from: string; to: string; weight: number }`
+- Graph must ALWAYS be connected (validate after generation)
+- Dijkstra returns `{ path: string[]; totalWeight: number }`
+
+## Testing
+- Test generator: "always produces connected graph for 100 random seeds"
+- Test dijkstra: "returns correct path on known small graph"
+- Run tests before any commit
+
+## Git
+- Conventional commits format
+- Small atomic commits
